@@ -36,11 +36,11 @@ export class PriWarehouseService  implements OnDestroy {
    *
    * Even if there isn't a value stored, null will be returned
    */
-  get(key: string, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<any> {
+  get<T = any>(key: string, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<T> {
     return this._initialized$.pipe(
       first(init => init),
       switchMap(() => {
-        const promise: Promise<any> = this._stores[warehouseId].getItem(key);
+        const promise: Promise<T> = this._stores[warehouseId].getItem(key);
         return from(promise);
       })
     ).toPromise();
@@ -64,11 +64,11 @@ export class PriWarehouseService  implements OnDestroy {
    *   - Uint32Array
    *   - String
    */
-  set(key: string, value: any, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<any> {
+  set<T = any>(key: string, value: T, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<T> {
     return this._initialized$.pipe(
       first(init => init),
       switchMap(() => {
-        const promise: Promise<any> = this._stores[warehouseId].setItem(key, value);
+        const promise: Promise<T> = this._stores[warehouseId].setItem(key, value);
         return from(promise);
       })
     ).toPromise();
