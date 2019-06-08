@@ -1,0 +1,32 @@
+{
+  "name": "pri-ng-warehouse",
+  "license": "MIT",
+  "description": "Angular warehouse module to store data in browser store (indexedDB, localstorage, websql, localstorage, inmemory)",
+  "homepage": "https://github.com/Priemar/pri-ng-warehouse",
+  "author": {
+    "name": "Mario Prieschl",
+    "url": "http://github.com/Priemar"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Priemar/pri-ng-warehouse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Priemar/pri-ng-warehouse/issues"
+  },
+  "keywords": [
+    "warehouse",
+    "indexedDB",
+    "websql",
+    "localstorage",
+    "inmemory",
+    "angular",
+    "api",
+    "simple"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^7.0.0",
+    "@angular/core": "^7.0.0",
+    "localforage": "^1.7.2"
+  }
+}

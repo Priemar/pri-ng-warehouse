@@ -1,5 +1,5 @@
 {
-  "name": "pri-ng-warehouse",
+  "name": "pri-ng-warehouse-demo",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Angular warehouse module to store data in browser store (indexedDB, localstorage, websql, localstorage, inmemory)",
@@ -23,13 +23,13 @@
     "inmemory",
     "angular",
     "api",
-    "easy"
+    "simple"
   ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "start:lib": "ng run pri-ng-warehouse:build:production --watch",
-    "build": "npm run build:lib && ng run demo:build:production --base-href https://priemar.github.io/pri-ng-warehouse/",
+    "build": "npm run build:lib && ng run pri-ng-warehouse-demo:build:production --base-href https://priemar.github.io/pri-ng-warehouse/",
     "build:lib": "ng run pri-ng-warehouse:build:production",
     "test": "ng test",
     "lint": "ng lint",

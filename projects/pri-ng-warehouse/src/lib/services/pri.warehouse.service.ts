@@ -31,12 +31,10 @@ export class PriWarehouseService  implements OnDestroy {
   private _stores: { [id: string]: any } = {};
 
   /**
-   * Gets an item from the storage library and supplies the result to a callback.
+   * Gets an item from the storage.
    * If the key does not exist, getItem() will return null.
    *
-   * Even if undefined is saved, null will be returned by getItem(). This is due to a
-   * limitation in localStorage, and for compatibility reasons localForage cannot
-   * store the value undefined.
+   * Even if there isn't a value stored, null will be returned
    */
   get(key: string, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<any> {
     return this._initialized$.pipe(
@@ -49,7 +47,7 @@ export class PriWarehouseService  implements OnDestroy {
   }
 
   /**
-   * Saves data to the offline store. You can store the following types of JavaScript objects:
+   * Saves the value with following types
    *   - Array
    *   - ArrayBuffer
    *   - Blob
@@ -65,19 +63,6 @@ export class PriWarehouseService  implements OnDestroy {
    *   - Uint16Array
    *   - Uint32Array
    *   - String
-   *
-   * When using localStorage and WebSQL backends, binary data will be serialized
-   * before being saved (and retrieved). This serialization will incur a size
-   * increase when binary data is saved.
-   *
-   * Warehouse.set('key', value).subscribe(
-   *   (item) => {
-   *     // do something with newly saved item
-   *   },
-   *   (error) => {
-   *     // handle the error
-   *   }
-   * );
    */
   set(key: string, value: any, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<any> {
     return this._initialized$.pipe(
@@ -104,7 +89,7 @@ export class PriWarehouseService  implements OnDestroy {
 
   /**
    * USE WITH CAUTION:
-   * Removes every key from the database, returning it to a blank slate.
+   * Removes every key from the store
    */
   destroy(warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<boolean | Error> {
     const promise: Promise<any> = this._stores[warehouseId].clear();
@@ -115,7 +100,7 @@ export class PriWarehouseService  implements OnDestroy {
   }
 
   /**
-   * Gets the number of keys in the offline store (i.e. its “length”).
+   * returns the number of stored entries
    */
   count(warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<number> {
     return this._initialized$.pipe(
@@ -129,8 +114,7 @@ export class PriWarehouseService  implements OnDestroy {
 
   /**
    * Get the name of a key based on its ID.
-   *
-   * This method is inherited from the localStorage API, but is acknowledged to be kinda weird.
+   * @deprecated
    */
   key(index: number, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<string> {
     return this._initialized$.pipe(
