@@ -8,8 +8,6 @@ Simple API to access browser storage's.
 ## Table of Contents
 
 - [Live Demo](https://priemar.github.io/pri-ng-warehouse/)
-
-
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
