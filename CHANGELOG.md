@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.1 - 1.0.3
+## 1.0.1 - 1.0.5
 
 - update: readme
 - fixes: peer dependency

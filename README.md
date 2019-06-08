@@ -37,7 +37,7 @@ Simple API to access browser storage's. (*IndexedDB, LocalStorage, WebSql, InMem
 **NPM**
 
 ```bash
-npm install --save pri-ng-warehouse
+npm install --save pri-ng-warehouse localforage
 ```
 
 <a name="usage"/>
