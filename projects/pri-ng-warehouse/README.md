@@ -2,7 +2,7 @@
   <h1 align="center">Warehouse: pri-ng-warehouse</h1>  
 </p>
 
-Simple API to access browser storage's.
+Simple API to access browser storage's. (*IndexedDB, LocalStorage, WebSql, InMemory*)
 
 
 ## Table of Contents
