@@ -1,0 +1,14 @@
+<!--key-->
+<mat-form-field>
+  <input matInput placeholder="Key" [formControl]="valueForm.controls.key">
+  <mat-error *ngIf="valueForm.controls.key.hasError('required')">Required</mat-error>
+</mat-form-field>
+
+<!--value-->
+<mat-form-field>
+  <input matInput placeholder="Value" [formControl]="valueForm.controls.value">
+</mat-form-field>
+
+<!--button-->
+<button type="submit" mat-raised-button color="primary" (click)="add()"
+        [disabled]="valueForm.invalid">Add</button>

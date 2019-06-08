@@ -1,0 +1,13 @@
+:host(*){
+  display: grid;
+  grid-template-columns: 1fr 1fr 100px;
+  grid-column-gap: 1em;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  align-self: center;
+}

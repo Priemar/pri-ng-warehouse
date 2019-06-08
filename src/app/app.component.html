@@ -1,20 +1,61 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- tool bar -->
+<mat-toolbar class="header">
+  <span class="title">pri-ng-warehouse</span>
+  <div class="actions">
+    <!--npm-->
+    <a mat-button href="https://www.npmjs.com/package/pri-ng-warehouse" target="_blank">
+      <mat-icon svgIcon="npm" inline="true" style="height: 35px; width: 35px;"></mat-icon>
+    </a>
+    <!--github-->
+    <a mat-button href="https://github.com/Priemar/pri-ng-warehouse" target="_blank">
+      <mat-icon svgIcon="github"></mat-icon>
+      <span>Github</span>
+    </a>
+  </div>
+</mat-toolbar>
 
+<!-- main content -->
+<pri-scrollbar class="content" overflowX="hidden">
+
+  <!--info-->
+  <mat-card>
+    <p>
+      <b>pri-ng-warehouse</b> is an angular module based on <i>localforage</i>, which allows you to simply store data in the browsers store(s).
+    </p>
+    <!--benefits-->
+    <ul>
+      <li>Simple API</li>
+      <li>Storage types: <i>indexedDB, websql, localstorage, inmemory</i></li>
+      <li>Fallback to supported storage type if configured storage is not available</li>
+      <li>Use mutliple storages at the same time</li>
+      <li>Compatible with SSR</li>
+    </ul>
+  </mat-card>
+
+  <!-- default / primary store -->
+  <mat-card>
+    <!--title-->
+    <mat-card-title>Default store</mat-card-title>
+    <mat-card-subtitle>indexedDB</mat-card-subtitle>
+    <!--content-->
+    <mat-card-content>
+      <!--add (input fields)-->
+      <app-storage-add storeId="default"></app-storage-add>
+      <app-storage-table storeId="default"></app-storage-table>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- secondary store -->
+  <mat-card>
+    <!--title-->
+    <mat-card-title>Secondary store</mat-card-title>
+    <mat-card-subtitle>localStorage</mat-card-subtitle>
+    <!--content-->
+    <mat-card-content>
+      <!--add (input fields)-->
+      <app-storage-add storeId="secondary"></app-storage-add>
+      <app-storage-table storeId="secondary"></app-storage-table>
+    </mat-card-content>
+  </mat-card>
+
+</pri-scrollbar>
