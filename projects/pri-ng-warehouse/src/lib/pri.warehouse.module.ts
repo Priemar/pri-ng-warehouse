@@ -19,7 +19,7 @@ export class PriWarehouseModule {
         },
         {
           provide: PriWarehouseConfigToken,
-          useValue: config || DEFAULT_CONFIG
+          useValue: config || [ DEFAULT_CONFIG ]
         },
         PriWarehouseService
       ]
