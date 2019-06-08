@@ -1,15 +1,40 @@
 {
   "name": "pri-ng-warehouse",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Angular warehouse module to store data in browser store (indexedDB, localstorage, websql, localstorage, inmemory)",
+  "homepage": "https://github.com/Priemar/pri-ng-warehouse",
+  "author": {
+    "name": "Mario Prieschl",
+    "url": "http://github.com/Priemar"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Priemar/pri-ng-warehouse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Priemar/pri-ng-warehouse/issues"
+  },
+  "keywords": [
+    "warehouse",
+    "indexedDB",
+    "websql",
+    "localstorage",
+    "inmemory",
+    "angular",
+    "api",
+    "easy"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "start:lib": "ng run pri-ng-warehouse:build:production --watch",
-    "build": "ng build --prod && npm run build:lib",
+    "build": "npm run build:lib && ng run demo:build:production --base-href https://priemar.github.io/pri-ng-warehouse/",
     "build:lib": "ng run pri-ng-warehouse:build:production",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "publish": "npm publish dist/pri-ng-warehouse"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +48,7 @@
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
+    "localforage": "^1.7.3",
     "pri-ng-scrollbar": "^3.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",

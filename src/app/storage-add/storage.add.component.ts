@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {StorageService} from '../services/storage.service';
 import {StorageEntry} from '../entities/storage.entry';
+import {DemoStorage} from '../enumerations/demo.storage';
 
 @Component({
   selector: 'app-storage-add',

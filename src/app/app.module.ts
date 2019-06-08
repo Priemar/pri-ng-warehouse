@@ -10,6 +10,13 @@ import {StorageAddComponent} from './storage-add/storage.add.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {StorageService} from './services/storage.service';
 import {StorageTableComponent} from './store-table/storage.table.component';
+import {PriWarehouseModule} from 'pri-ng-warehouse';
+import {DEFAULT_WAREHOUSE_CONFIG, SECONDARY_WAREHOUSE_CONFIG} from './configs/warehouse.configs';
+import {FileSizePipe} from './pipes/file.size.pipe';
+
+
+
+
 
 @NgModule({
   imports: [
@@ -23,12 +30,14 @@ import {StorageTableComponent} from './store-table/storage.table.component';
     MatTableModule,
     IconsModule,
     ReactiveFormsModule,
-    PriScrollbarModule
+    PriScrollbarModule,
+    PriWarehouseModule.configure([DEFAULT_WAREHOUSE_CONFIG, SECONDARY_WAREHOUSE_CONFIG])
   ],
   declarations: [
     AppComponent,
     StorageAddComponent,
-    StorageTableComponent
+    StorageTableComponent,
+    FileSizePipe
   ],
   providers: [
     StorageService

@@ -25,18 +25,32 @@
     <!--benefits-->
     <ul>
       <li>Simple API</li>
+      <li>Same API for different storage types</li>
       <li>Storage types: <i>indexedDB, websql, localstorage, inmemory</i></li>
       <li>Fallback to supported storage type if configured storage is not available</li>
       <li>Use mutliple storages at the same time</li>
-      <li>Compatible with SSR</li>
+      <li>Compatible with SSR (fallback to inmemory store)</li>
     </ul>
+  </mat-card>
+
+  <!--warehouse system infos-->
+  <mat-card class="system-info">
+    <mat-card-title>Warehouse system infos</mat-card-title>
+    <mat-card-content *ngIf="storageService.$warehouseSystemInfo | async; let info">
+      <p>IndexedDB: <mat-icon>{{ info.indexedDb ? 'check' : 'close' }}</mat-icon></p>
+      <p>WebSql: <mat-icon>{{ info.webSql ? 'check' : 'close' }}</mat-icon></p>
+      <p>LocalStorage: <mat-icon>{{ info.localStorage ? 'check' : 'close' }}</mat-icon></p>
+      <p>IsCacheSizeAvailable: <mat-icon>{{ info.isCacheSizeAvailable ? 'check' : 'close' }}</mat-icon></p>
+      <p *ngIf="info.isCacheSizeAvailable">CacheUsage: {{ info.cacheUsage | fileSize }}</p>
+      <p *ngIf="info.isCacheSizeAvailable">CacheSize: {{ info.cacheSize | fileSize }}</p>
+    </mat-card-content>
   </mat-card>
 
   <!-- default / primary store -->
   <mat-card>
     <!--title-->
     <mat-card-title>Default store</mat-card-title>
-    <mat-card-subtitle>indexedDB</mat-card-subtitle>
+    <mat-card-subtitle>default (uses the first available store)</mat-card-subtitle>
     <!--content-->
     <mat-card-content>
       <!--add (input fields)-->

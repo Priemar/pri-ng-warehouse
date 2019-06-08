@@ -1,5 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {StorageService} from '../services/storage.service';
+import {DemoStorage} from '../enumerations/demo.storage';
 
 @Component({
   selector: 'app-storage-table',

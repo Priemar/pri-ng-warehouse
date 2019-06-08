@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {StorageService} from './services/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
+  /**
+   * constructor
+   * @param storageService storage service
+   */
+  constructor(public storageService: StorageService) {}
 }
