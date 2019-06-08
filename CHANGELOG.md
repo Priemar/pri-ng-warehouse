@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.8
+
+- added: (PriWarehouseService) *setJson* and *getJson* methods added
+
 ## 1.0.7
 
 - changed: (PriWarehouseService) *set* and *get* changed to generic 

@@ -45,6 +45,14 @@ export class PriWarehouseService  implements OnDestroy {
       })
     ).toPromise();
   }
+  /**
+   * get json object from warehouse
+   * @param key warehouse key
+   * @param warehouseId warehouse id
+   */
+  getJson<T = any>(key: string, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<T> {
+    return this.get(key, warehouseId).then(val => JSON.parse(val));
+  }
 
   /**
    * Saves the value with following types
@@ -72,6 +80,17 @@ export class PriWarehouseService  implements OnDestroy {
         return from(promise);
       })
     ).toPromise();
+  }
+
+  /**
+   * set json object to warehouse
+   * @param key warehouse key
+   * @param value value
+   * @param warehouseId warehouse id
+   */
+  setJson<T>(key: string, value: T, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<T> {
+    const jsonString: string = !!value ? JSON.stringify(value) : null;
+    return this.set(key, jsonString, warehouseId).then(val => JSON.parse(val));
   }
 
   /**
