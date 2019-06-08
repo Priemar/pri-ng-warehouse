@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "pri-ng-warehouse": [
+        "dist/pri-ng-warehouse"
+      ],
+      "pri-ng-warehouse/*": [
+        "dist/pri-ng-warehouse/*"
+      ]
+    }
   }
 }

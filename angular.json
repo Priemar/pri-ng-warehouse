@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pri-ng-warehouse": {
+    "demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pri-ng-warehouse",
+            "outputPath": "dist/demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "pri-ng-warehouse:build"
+            "browserTarget": "demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "pri-ng-warehouse:build:production"
+              "browserTarget": "demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pri-ng-warehouse:build"
+            "browserTarget": "demo:build"
           }
         },
         "test": {
@@ -110,15 +110,55 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "pri-ng-warehouse:serve"
+            "devServerTarget": "demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "pri-ng-warehouse:serve:production"
+              "devServerTarget": "demo:serve:production"
             }
           }
         }
       }
+    },
+    "pri-ng-warehouse": {
+      "projectType": "library",
+      "root": "projects/pri-ng-warehouse",
+      "sourceRoot": "projects/pri-ng-warehouse/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/pri-ng-warehouse/tsconfig.lib.json",
+            "project": "projects/pri-ng-warehouse/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/pri-ng-warehouse/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/pri-ng-warehouse/src/test.ts",
+            "tsConfig": "projects/pri-ng-warehouse/tsconfig.spec.json",
+            "karmaConfig": "projects/pri-ng-warehouse/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pri-ng-warehouse/tsconfig.lib.json",
+              "projects/pri-ng-warehouse/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
-  "defaultProject": "pri-ng-warehouse"
+  "defaultProject": "demo"
 }
