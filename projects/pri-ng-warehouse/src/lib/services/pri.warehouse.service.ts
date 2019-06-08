@@ -1,5 +1,5 @@
 import {DRIVER_TYPE, PriWarehouseConfig} from '../entities/pri.warehouse.config';
-import {BehaviorSubject, from, of} from 'rxjs/index';
+import {BehaviorSubject, from, of} from 'rxjs';
 import {Inject, Injectable, OnDestroy, PLATFORM_ID} from '@angular/core';
 import {PriWarehouseConfigToken} from '../token/pri.warehouse.config.token';
 import {LocalForageToken} from '../token/local.forage.token';
