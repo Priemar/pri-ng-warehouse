@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.9
+
+- fixed: (PriWarehouseService) *setJson* and *getJson* with null values
+
 ## 1.0.8
 
 - added: (PriWarehouseService) *setJson* and *getJson* methods added

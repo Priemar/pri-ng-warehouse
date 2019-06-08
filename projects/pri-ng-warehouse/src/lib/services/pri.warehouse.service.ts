@@ -51,7 +51,7 @@ export class PriWarehouseService  implements OnDestroy {
    * @param warehouseId warehouse id
    */
   getJson<T = any>(key: string, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<T> {
-    return this.get(key, warehouseId).then(val => JSON.parse(val));
+    return this.get(key, warehouseId).then(val => val ? JSON.parse(val) : null );
   }
 
   /**
@@ -90,7 +90,7 @@ export class PriWarehouseService  implements OnDestroy {
    */
   setJson<T>(key: string, value: T, warehouseId: string = DEFAULT_CONFIG.warehouseId): Promise<T> {
     const jsonString: string = !!value ? JSON.stringify(value) : null;
-    return this.set(key, jsonString, warehouseId).then(val => JSON.parse(val));
+    return this.set(key, jsonString, warehouseId).then(val => val ? JSON.parse(val) : null);
   }
 
   /**
