@@ -8,8 +8,8 @@ import * as localforage from 'localforage';
 
 @NgModule()
 export class PriWarehouseModule {
-  /**configure*/
-  static configure(config: PriWarehouseConfig[]): ModuleWithProviders {
+  /** configure */
+  static configure(config?: PriWarehouseConfig[]): ModuleWithProviders {
     return {
       ngModule: PriWarehouseModule,
       providers: [
