@@ -156,12 +156,20 @@ this.warehouse.get('storage-key', 'your-warehouse-id')
    If the key does not exist, getItem() will return null.
    
    Even if there isn't a value stored, null will be returned
-   
+
+- **getJson(key: string, warehouseId?: string)**
+
+  get javascript object to store (object must be serializable)
+
 - **set(key: string, value: any, warehouseId?: string)**
 
   Saves a value to the store, the following types are allowed:
   
   *Array, ArrayBuffer, Blob, Float32Array, Float64Array, Int8Array, Int16Array, Int32Array, Number, Object, Uint8Array, Uint8ClampedArray, Uint16Array, Uint32Array, String*
+
+- **setJson(key: string, value: any, warehouseId?: string)**
+
+  set javascript object to store (object must be serializable)
   
 - **remove(key: string, warehouseId?: string)**
 
