@@ -1,7 +1,7 @@
 {
   "name": "pri-ng-warehouse",
   "license": "MIT",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "description": "Angular warehouse module to store data in browser store (indexedDB, localstorage, websql, localstorage, inmemory)",
   "homepage": "https://github.com/Priemar/pri-ng-warehouse",
   "author": {

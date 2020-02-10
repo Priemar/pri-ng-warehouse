@@ -4,13 +4,16 @@
 
 Simple API to access browser storage's. (*IndexedDB, LocalStorage, WebSql, InMemory*)
 
+#### Angular   9: version >= 2.x
+#### Angular < 9: version < 2.x
+
     
 <ul>
   <li>Simple API</li>
   <li>Same API for different storage types</li>
   <li>Storage types: <i>indexedDB, websql, localstorage, inmemory</i></li>
   <li>Fallback to supported storage type if configured storage is not available</li>
-  <li>Use mutliple storages at the same time</li>
+  <li>Use multiple storages at the same time</li>
   <li>Compatible with SSR</li>
 </ul>
 
