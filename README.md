@@ -4,7 +4,7 @@
 
 Simple API to access browser storage's. (*IndexedDB, LocalStorage, WebSql, InMemory*)
 
-#### Angular   9: version >= 2.x
+#### Angular >= 9: version >= 2.x
 #### Angular < 9: version < 2.x
 
     
