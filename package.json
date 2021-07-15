@@ -35,7 +35,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "npm publish dist/pri-ng-warehouse"
+    "publish": "cd dist/pri-ng-warehouse && npm publish"
   },
   "private": true,
   "dependencies": {
